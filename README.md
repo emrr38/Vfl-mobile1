@@ -316,3 +316,52 @@ public class PackOpenManager : MonoBehaviour
         return pulledPlayer;
     }
 }
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using TMPro;
+
+public class PackWalkoutManager : MonoBehaviour
+{
+    [Header("UI Elementleri")]
+    public GameObject walkoutPanel;
+    public Image countryFlagImage;
+    public TextMeshProUGUI ovrText;
+    public TextMeshProUGUI positionText;
+    public Image cardDisplayImage;
+
+    [Header("Efektler")]
+    public GameObject confettiEffect;
+    public AudioSource walkoutSound;
+
+    public void TriggerWalkoutSequence(PackOpenManager.PlayerCard card)
+    {
+        StartCoroutine(PlayWalkoutSequence(card));
+    }
+
+    private IEnumerator PlayWalkoutSequence(PackOpenManager.PlayerCard card)
+    {
+        // 1. Ekranı ve Efektleri Aç
+        walkoutPanel.SetActive(true);
+        if (walkoutSound != null) walkoutSound.Play();
+
+        // 2. İlk Aşama: Pozisyon ve OVR Parlaması
+        ovrText.text = card.ovrRating.ToString();
+        positionText.text = card.position;
+        ovrText.gameObject.SetActive(true);
+        positionText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(1.5f); // 1.5 saniye bekle
+
+        // 3. İkinci Aşama: Hazırladığın Efsane Kartı Ekrana Getir
+        if (cardDisplayImage != null && card.cardImage != null)
+        {
+            cardDisplayImage.sprite = card.cardImage;
+        }
+        
+        cardDisplayImage.gameObject.SetActive(true);
+        if (confettiEffect != null) confettiEffect.SetActive(true);
+
+        Debug.Log("✨ " + card.playerName + " için eFootball tarzı Walkout tamamlandı!");
+    }
+}
