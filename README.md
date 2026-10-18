@@ -371,127 +371,7 @@ spainEpicPack.Add(new PlayerCard { playerName = "Xavi", position = "OS", ovrRati
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>VFL Mobile - 3D 11v11 Match Engine</title>
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <style>
-        :root {
-            --epic-gold: #ffd700;
-            --bg-dark: #0a0b10;
-        }
-
-        body {
-            margin: 0;
-            background: #08090d;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-            overflow: hidden;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        /* SCREEN MANAGEMENT */
-        .screen {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-sizing: border-box;
-            padding: 15px;
-            z-index: 2;
-            transition: opacity 0.3s ease;
-        }
-        .hidden { display: none !important; opacity: 0; pointer-events: none; }
-
-        /* HEADER */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .user-badge {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 800;
-            font-size: 14px;
-        }
-        .user-avatar {
-            width: 36px; height: 36px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #00f2fe, #4facfe);
-            display: flex; align-items: center; justify-content: center;
-            border: 2px solid #fff;
-        }
-        .currencies { display: flex; gap: 8px; }
-        .currency-box {
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(8px);
-            padding: 5px 12px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.15);
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        /* MAIN BANNER */
-        .banner-container {
-            margin: auto 0;
-            background: linear-gradient(135deg, #
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>VFL Mobile - 3D 11v11 Match Engine</title>
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <style>
-        :root {
-            --epic-gold: #ffd700;
-            --bg-dark: #0a0b10;
-        }
-
-        body {
-            margin: 0;
-            background: #08090d;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-            overflow: hidden;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        /* SCREEN MANAGEMENT */
-        .screen {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-sizing: border-box;
-            padding: 15px;
-            z-index: 2;
-            transition: opacity 0.3s ease;
-        }
-        .hidden { display: none !important; opacity: 0; pointer-events: none; }
-
-        /* HEADER */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .user-badge {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 800;
-            font-size: 14px;
-        }
+    <title>VFL Mobile - 3D 11v11 
         .user-avatar {
             width: 36px; height: 36px;
             border-radius: 50%;
@@ -1470,4 +1350,125 @@ spainEpicPack.Add(new PlayerCard { playerName = "Xavi", position = "OS", ovrRati
 </body>
 </html>
 edit>To bodyadd the body as a 3d design and let in-game matches be made, let the squad be established Oct.
+Match Engine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        :root {
+            --epic-gold: #ffd700;
+            --bg-dark: #0a0b10;
+        }
+
+        body {
+            margin: 0;
+            background: #08090d;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* SCREEN MANAGEMENT */
+        .screen {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 15px;
+            z-index: 2;
+            transition: opacity 0.3s ease;
+        }
+        .hidden { display: none !important; opacity: 0; pointer-events: none; }
+
+        /* HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .user-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 14px;
+        }
+        .user-avatar {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            display: flex; align-items: center; justify-content: center;
+            border: 2px solid #fff;
+        }
+        .currencies { display: flex; gap: 8px; }
+        .currency-box {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(8px);
+            padding: 5px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* MAIN BANNER */
+        .banner-container {
+            margin: auto 0;
+            background: linear-gradient(135deg, #
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>VFL Mobile - 3D 11v11 Match Engine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        :root {
+            --epic-gold: #ffd700;
+            --bg-dark: #0a0b10;
+        }
+
+        body {
+            margin: 0;
+            background: #08090d;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* SCREEN MANAGEMENT */
+        .screen {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 15px;
+            z-index: 2;
+            transition: opacity 0.3s ease;
+        }
+        .hidden { display: none !important; opacity: 0; pointer-events: none; }
+
+        /* HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .user-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 14px;
+        }
 
