@@ -206,3 +206,113 @@ public class PlayerController : MonoBehaviour
         isSprinting = sprint;
     }
 }
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+
+public class PackOpenManager : MonoBehaviour
+{
+    [System.Serializable]
+    public class PlayerCard
+    {
+        public string playerName;
+        public string position;
+        public int ovrRating;
+        public string cardTier; // "Epic", "Big Time", "Highlight"
+        public Sprite cardImage; // Hazırladığın kart görseli
+    }
+
+    [Header("İspanya Efsaneleri Paketi")]
+    public List<PlayerCard> spainEpicPack = new List<PlayerCard>();
+
+    [Header("UI Görsel Bağlantıları")]
+    public Image displayCardImage;  // Ekrandaki kart resmi
+    public GameObject walkoutEffect; // Paket açılış efekti
+
+    void Start()
+    {
+        // Oyuncu Veritabanını Oluşturma
+        InitSpainLegendPack();
+    }
+
+    void InitSpainLegendPack()
+    {
+        spainEpicPack.Add(new PlayerCard { playerName = "Xavi", position = "OS", ovrRating = 106, cardTier = "Epic" });
+        spainEpicPack.Add(new PlayerCard { playerName = "Andres Iniesta", position = "OS", ovrRating = 105, cardTier = "Epic" });
+        spainEpicPack.Add(new PlayerCard { playerName = "Sergio Ramos", position = "DEF", ovrRating = 104, cardTier = "Big Time" });
+        spainEpicPack.Add(new PlayerCard { playerName = "Carles Puyol", position = "DEF", ovrRating = 103, cardTier = "Big Time" });
+        spainEpicPack.Add(new PlayerCard { playerName = "Iker Casillas", position = "GK", ovrRating = 102, cardTier = "Highlight" });
+    }
+
+    // Paket Açma Butonuna Basıldığında Çalışır
+    public PlayerCard OpenSpainPack()
+    {
+        int randomIndex = Random.Range(0, spainEpicPack.Count);
+        PlayerCard pulledPlayer = spainEpicPack[randomIndex];
+
+        Debug.Log("🎉 PAKETTEN ÇIKAN EFSANE: " + pulledPlayer.playerName + " | OVR: " + pulledPlayer.ovrRating + " | Mevki: " + pulledPlayer.position);
+
+        // Ekrandaki kart görselini güncelleme (Unity UI Entegrasyonu)
+        if (displayCardImage != null && pulledPlayer.cardImage != null)
+        {
+            displayCardImage.sprite = pulledPlayer.cardImage;
+        }
+
+        return pulledPlayer;
+    }
+}
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+
+public class PackOpenManager : MonoBehaviour
+{
+    [System.Serializable]
+    public class PlayerCard
+    {
+        public string playerName;
+        public string position;
+        public int ovrRating;
+        public string cardTier; // "Epic", "Big Time", "Highlight"
+        public Sprite cardImage; // Hazırladığın kart görseli
+    }
+
+    [Header("İspanya Efsaneleri Paketi")]
+    public List<PlayerCard> spainEpicPack = new List<PlayerCard>();
+
+    [Header("UI Görsel Bağlantıları")]
+    public Image displayCardImage;  // Ekrandaki kart resmi
+    public GameObject walkoutEffect; // Paket açılış efekti
+
+    void Start()
+    {
+        // Oyuncu Veritabanını Oluşturma
+        InitSpainLegendPack();
+    }
+
+    void InitSpainLegendPack()
+    {
+        spainEpicPack.Add(new PlayerCard { playerName = "Xavi", position = "OS", ovrRating = 106, cardTier = "Epic" });
+        spainEpicPack.Add(new PlayerCard { playerName = "Andres Iniesta", position = "OS", ovrRating = 105, cardTier = "Epic" });
+        spainEpicPack.Add(new PlayerCard { playerName = "Sergio Ramos", position = "DEF", ovrRating = 104, cardTier = "Big Time" });
+        spainEpicPack.Add(new PlayerCard { playerName = "Carles Puyol", position = "DEF", ovrRating = 103, cardTier = "Big Time" });
+        spainEpicPack.Add(new PlayerCard { playerName = "Iker Casillas", position = "GK", ovrRating = 102, cardTier = "Highlight" });
+    }
+
+    // Paket Açma Butonuna Basıldığında Çalışır
+    public PlayerCard OpenSpainPack()
+    {
+        int randomIndex = Random.Range(0, spainEpicPack.Count);
+        PlayerCard pulledPlayer = spainEpicPack[randomIndex];
+
+        Debug.Log("🎉 PAKETTEN ÇIKAN EFSANE: " + pulledPlayer.playerName + " | OVR: " + pulledPlayer.ovrRating + " | Mevki: " + pulledPlayer.position);
+
+        // Ekrandaki kart görselini güncelleme (Unity UI Entegrasyonu)
+        if (displayCardImage != null && pulledPlayer.cardImage != null)
+        {
+            displayCardImage.sprite = pulledPlayer.cardImage;
+        }
+
+        return pulledPlayer;
+    }
+}
