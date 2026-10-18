@@ -1469,4 +1469,5 @@ spainEpicPack.Add(new PlayerCard { playerName = "Xavi", position = "OS", ovrRati
     </script>
 </body>
 </html>
+edit>To bodyadd the body as a 3d design and let in-game matches be made, let the squad be established Oct.
 
